@@ -1,0 +1,4 @@
+t = σ branch_city LIKE 'Brooklyn' (branch)
+prod = pi a.assets, branch.branch_name, branch.branch_city, branch.assets (rho a (t) x branch)
+sel = σ a.assets < branch.assets prod
+pi branch_name (sel)

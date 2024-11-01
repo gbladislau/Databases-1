@@ -1,0 +1,4 @@
+pi c.customer_city, c.customer_name
+	sigma a.account_number = d.account_number and 
+			d.customer_name = c.customer_name and branch_name = 'Perryridge' 
+			(((rho a account) x (rho d depositor) x (rho c customer)))

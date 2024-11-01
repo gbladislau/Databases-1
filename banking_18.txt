@@ -1,0 +1,7 @@
+t1 = sigma e.customer_name LIKE 'Hayes' 
+	((rho e borrower)⨝ (rho b branch) ⨝ (rho l loan))
+t2 = sigma d.customer_name LIKE 'Hayes' 
+	((rho a account) ⨝ (rho d depositor) ⨝ (rho b branch))
+	
+t3 = pi branch_name, branch_city (t1) ∩  pi branch_name, branch_city (t2)
+pi branch_name, branch_city t3
