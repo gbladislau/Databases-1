@@ -1,0 +1,12 @@
+french_c = (sigma nationality LIKE 'French' (constructors))
+nomes = π driverId, nome ← concat (forename,' ',surname) (drivers)
+drivers_com_nomes = nomes ⨝ drivers
+resp = 
+	drivers_com_nomes ⨝ (sigma positionOrder = 1 results)
+	⨝ pi name, constructorId (sigma nationality LIKE 'French' (constructors))
+	
+temp = pi constructors.name, nome, raceId(resp)
+temp_r = pi constructors.name, nome, year, circuitId (temp ⨝ races)
+temp_q = pi name, nome, year, circ_name (temp_r ⨝ pi circ_name ← name, circuitId circuits) 
+
+pi a.name → Equipe, nome → Piloto, circ_name →Circuito, year → Ano (pi name (rho a (sigma nationality LIKE 'French' (constructors))) ⟗ temp_q)

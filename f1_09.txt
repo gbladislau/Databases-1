@@ -1,0 +1,4 @@
+t = γ num ← COUNT(*) (pi raceId races)  
+t2 = γ num_ ← COUNT(year) ( pi year races)
+res = t x t2
+pi MediaCorridas <- round (num / num_) (res)
