@@ -1,0 +1,6 @@
+nomes = π driverId, nome ← concat (forename,' ',surname) (drivers)
+drivers_com_nomes = nomes ⨝ drivers
+resultados_nomes =  pi raceId races ⨝ pi driverId, raceId results ⨝ pi nome, driverId drivers_com_nomes
+resp = (pi nome -> Piloto, Aparicoes (γ nome ; Aparicoes <- count(nome) (resultados_nomes))) 
+maximmun = γ MAX(Aparicoes) -> n (resp)
+resp

@@ -1,0 +1,6 @@
+pi a.codigo -> codigo_auto1, a.ano ->ano_auto1,
+	automoveis.codigo -> codigo_auto2	, automoveis.ano -> ano_auto2
+		sigma a.fabricante = automoveis.fabricante 
+			∧ a.modelo = automoveis.modelo ∧
+			(a.preco_tabela - automoveis.preco_tabela) > 1000 
+				(rho a automoveis ⨯ automoveis)

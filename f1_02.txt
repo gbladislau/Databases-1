@@ -1,0 +1,1 @@
+pi nationality (sigma positionOrder <= 3 (pi positionOrder, driverId results) ⨝ (pi driverId, nationality drivers)) - pi nationality constructors
