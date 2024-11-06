@@ -1,0 +1,1 @@
+consumidores ⨝ (pi cpf consumidores - pi cpf negocios)

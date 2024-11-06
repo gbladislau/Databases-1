@@ -1,0 +1,5 @@
+t1 = pi nome -> nome_c, sobrenome-> sobrenome_c, cgc, codigo, data, preco
+				(consumidores ⨝ negocios)
+t2 = pi nome-> nome_r, nome_c, sobrenome_c, codigo,data, preco (revendedoras natural join t1)
+t3 = (pi modelo, codigo, fabricante  automoveis natural join t2)
+pi nome_c, sobrenome_c, nome_r, fabricante, modelo, data, preco (t3)

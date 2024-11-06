@@ -1,0 +1,4 @@
+nomes = π driverId, nome ← concat (forename,' ',surname) (drivers)
+drivers_com_nomes = nomes ⨝ drivers
+somados = (γ nome ; sum(points)-> pontos_somados (drivers_com_nomes ⨝ results))
+pi nome -> Piloto( somados ÷ (γ; MAX (pontos_somados) -> pontos_somados (somados)) )

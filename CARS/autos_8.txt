@@ -1,0 +1,1 @@
+γ; count(modelo) -> qntd_modelos (sigma fabricante like 'Fiat' automoveis)
