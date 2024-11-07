@@ -1,0 +1,4 @@
+t2 = pi branch_name, branch_city 
+	 	sigma customer_name = 'Smith' 
+			((branch) natural join ((rho b borrower) natural join (rho l loan) natural join (rho c customer)))
+t2

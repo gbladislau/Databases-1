@@ -1,0 +1,8 @@
+schum = pi driverId (
+	sigma forename = 'Michael' and surname = 'Schumacher' (drivers) )
+ferrari = pi constructorId (
+	sigma name = 'Ferrari' (constructors))
+	
+corridas_que_shumacher_correu = (pi raceId (results ⨝ schum ⨝ ferrari))
+corredores_que_correram_com_shumacher = pi driverId (results natural join ferrari natural join corridas_que_shumacher_correu) - schum
+pi Piloto <- concat(forename,' ',surname) (drivers natural join corredores_que_correram_com_shumacher)

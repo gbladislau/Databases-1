@@ -1,0 +1,5 @@
+t = gamma year; COUNT(constructorId) -> num_pil (pi year, constructorId ((pi constructorId, raceId results) natural join races))
+
+t2_num = gamma SUM(num_pil) -> saida (t)
+t3_denom = gamma COUNT(*) -> n (t)
+pi MediaEquipes <- round (saida/n) (t2_num x t3_denom)

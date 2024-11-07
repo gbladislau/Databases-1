@@ -1,0 +1,10 @@
+nomes = π driverId, nome ← concat (forename,' ',surname) (drivers)
+drivers_com_nomes = nomes ⨝ drivers
+resultados_nomes =  pi raceId, driverId (results) ⨝ pi nome, driverId (drivers_com_nomes)
+
+t_circ = races natural join circuits
+qnt_corridas_por_circ = gamma name; count(raceId) -> corridas_em_Circ (t_circ)
+
+qntd_corridas_por_piloto = gamma nome, name; count(raceId) -> qntd_corridas (resultados_nomes natural join t_circ)
+
+pi nome-> Piloto, name-> Circuito (sigma corridas_em_Circ = qntd_corridas (qnt_corridas_por_circ natural join qntd_corridas_por_piloto))

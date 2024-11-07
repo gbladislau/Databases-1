@@ -1,0 +1,3 @@
+pi customer_name, customer_city
+	sigma branch_name = 'Perryridge' 
+			(((rho b borrower) natural join (rho l loan) natural join (rho c customer)))

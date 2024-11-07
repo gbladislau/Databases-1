@@ -1,0 +1,3 @@
+t = σ branch_name LIKE 'North Town' (branch natural join account)
+maximo = gamma ; MAX(balance) -> max (t)
+pi account_number sigma balance < max (account x maximo)

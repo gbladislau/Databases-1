@@ -1,0 +1,4 @@
+nomes = π driverId, nome ← concat (forename,' ',surname) (drivers)
+drivers_com_nomes = nomes ⨝ drivers
+t = pi driverId drivers - pi driverId (results natural join races)
+pi nome (drivers_com_nomes natural join t)

@@ -1,0 +1,2 @@
+t = branch natural join loan natural join borrower natural join customer
+pi customer_name sigma num_contas > 1 gamma customer_name; count(branch_name) -> num_contas (t)

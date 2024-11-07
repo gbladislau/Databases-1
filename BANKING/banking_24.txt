@@ -1,0 +1,2 @@
+t=pi branch_name (sigma customer_name = 'Hayes' (branch natural join  account join depositor natural join customer))
+sigma customer_name!= 'Hayes' pi customer_name  ((branch natural join loan natural join borrower natural join customer) natural join t)

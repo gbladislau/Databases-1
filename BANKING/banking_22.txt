@@ -1,0 +1,3 @@
+pi c1.customer_name 
+    sigma c1.customer_street = c2.customer_street and c1.customer_city != c2.customer_city 
+        (rho c1 customer x rho c2 customer )

@@ -1,0 +1,5 @@
+menor_ano = gamma ; MIN(year) ->year (races)
+prim_corrida = sigma round = 1 (races natural join menor_ano)
+gp = gps natural join prim_corrida
+circuito = prim_corrida natural join circuits
+pi a.name -> GP, country -> Pais(rho a gp x  rho b circuito)

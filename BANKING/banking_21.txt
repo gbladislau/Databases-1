@@ -1,0 +1,3 @@
+t = σ branch_name LIKE 'Downtown' (branch natural join loan)
+maximo = gamma ; Max(amount) -> max (t)
+ pi loan_number sigma amount <= max (loan x maximo)

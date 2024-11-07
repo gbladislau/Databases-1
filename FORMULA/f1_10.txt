@@ -1,0 +1,5 @@
+t = gamma year; COUNT(driverId) -> num_pil (pi year, driverId ((pi driverId, raceId results) natural join races))
+
+t2_num = gamma SUM(num_pil) -> saida (t)
+t3_denom = gamma COUNT(*) -> n (t)
+pi MediaPilotos <- round (saida/n) (t2_num x t3_denom)
