@@ -1,0 +1,4 @@
+circ_corrida = sigma year=2020(circuits natural join races)
+rounds = sigma races.round = b.round-1(pi lat, lng, round circ_corrida x pi lat, lng, round (rho b circ_corrida))
+dist = pi dist <- abs(b.lat - circuits.lat) + abs(b.lng -circuits.lng) (rounds)
+ (gamma SUM(dist) -> DIST (dist))

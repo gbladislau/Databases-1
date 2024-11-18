@@ -1,0 +1,4 @@
+construtores_que_pontuaram_corridas_por_ano = pi constructorId, year, raceId (sigma points != 0 (results natural join races))
+pontuaram_filtrados = sigma year = 2012 (gamma constructorId, year ;count(raceId)->n_corridas(construtores_que_pontuaram_corridas_por_ano))
+corridas_por_ano = gamma year;count(raceId)-> n_corridas (pi raceId, year (results natural join races))
+pi name -> Equipe (constructors natural join pi constructorId (pontuaram_filtrados natural join corridas_por_ano))
