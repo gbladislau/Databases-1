@@ -1,0 +1,7 @@
+nomes = π driverId, nome ← concat (forename,' ',surname) (drivers)
+drivers_com_nomes = nomes ⨝ drivers
+results_filtrados = sigma points != 0 (results)
+corridas_por_ano = gamma year; count(raceId) -> corrdidas_por_ano (pi raceId, year (races natural join results_filtrados))
+corridas_por_ano_por_pil = gamma year, driverId; count(raceId) -> corrdidas_por_ano  ( pi raceId, year, driverId (drivers natural join results_filtrados natural join races))
+correram_todas_as_corridas = corridas_por_ano_por_pil natural join corridas_por_ano
+pi nome -> Piloto, year -> Ano (correram_todas_as_corridas natural join drivers_com_nomes)

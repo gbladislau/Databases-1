@@ -1,7 +1,8 @@
 nomes = π driverId, nome ← concat (forename,' ',surname) (drivers)
 drivers_com_nomes = nomes ⨝ drivers
 t = pi driverId, year, points, raceId, constructorId (results natural join races)
-porPonto = gamma constructorId, driverId, year; sum(points) -> pontos (t)
+porPonto = gamma constructorId, year; sum(points) -> pontos (t)
 maximos = gamma year; max(pontos) -> pontos (porPonto)
 maiores = porPonto natural join maximos
-pi name (constructors natural join pi constructorId (drivers_com_nomes natural join (sigma n>=2 (gamma constructorId, driverId; count(year) -> n (maiores)))))
+t2 = gamma constructorId ; count(year) -> n (maiores)
+pi name -> Equipe (constructors natural join pi constructorId (sigma n>=2 (gamma constructorId; count(year) -> n (maiores) )))

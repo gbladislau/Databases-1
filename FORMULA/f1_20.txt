@@ -1,0 +1,7 @@
+results_filtrados = sigma points = 0 (results)
+corridas_por_ano = gamma year; count(raceId) -> corridas_por_ano (pi raceId, year (races natural join results))
+corridas_zeradas_por_ano = gamma constructorId, year; count(raceId) -> corridas_por_ano ((pi constructorId, points, raceId (results_filtrados)) natural join races)
+construtores_que_zeraram_corridas_por_ano = corridas_zeradas_por_ano natural join corridas_por_ano
+construtores_que_nao_zeraram_corridas_por_ano = pi constructorId, year (sigma points != 0 (results natural join races))
+construtores_que_zeraram_todas_corridas_por_ano = pi constructorId, year construtores_que_zeraram_corridas_por_ano  - pi constructorId, year(construtores_que_nao_zeraram_corridas_por_ano)
+pi name-> Equipe, year-> Ano (construtores_que_zeraram_todas_corridas_por_ano natural join constructors)
