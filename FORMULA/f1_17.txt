@@ -1,4 +1,7 @@
 nomes = π driverId, nome ← concat (forename,' ',surname) (drivers)
 drivers_com_nomes = nomes ⨝ drivers
-somados = (γ nome ; sum(points)-> pontos_somados (drivers_com_nomes ⨝ results))
-pi nome -> Piloto( somados ÷ (γ; MAX (pontos_somados) -> pontos_somados (somados)) )
+t = pi driverId, year, points, raceId (results natural join races)
+porPonto = gamma driverId, year; sum(points) -> pontos (t)
+maximos = gamma year; max(pontos) -> pontos (porPonto)
+maiores = porPonto natural join maximos
+pi nome -> Piloto (drivers_com_nomes natural join (sigma n>=4 (gamma driverId; count(year) -> n (maiores))))

@@ -1,0 +1,3 @@
+t = gamma year; count(raceId) -> qntd_race  races 
+t1 = gamma MAX(qntd_race) -> qntd_race (t)
+pi year -> Temporada, qntd_race -> Corridas (t1 natural join t)

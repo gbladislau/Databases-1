@@ -1,0 +1,3 @@
+t = gamma name; count(raceId) -> qntd_race (  races natural join gps)
+t1 = gamma MAX(qntd_race) -> qntd_race (t)
+pi name -> GP, qntd_race -> Ocorrencias (t1 natural join t)
