@@ -1,0 +1,1 @@
+SELECT * from "CITY" where like("COUNTRYCODE",'JPN')
